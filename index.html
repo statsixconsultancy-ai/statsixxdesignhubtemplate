@@ -111,7 +111,7 @@
   .brand .s6-mark{height:28px;width:auto;transition:transform .8s var(--ease)}
   .brand .x{font-family:var(--serif);font-style:italic;font-size:24px;line-height:32px}
   .brand .dh-mini{position:relative;width:96px;height:40px;border-radius:999px;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line-2);transition:transform .8s var(--ease)}
-  .brand .dh-mini img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%;transform:scale(.94)}
+  .brand .dh-mini img{position:absolute;inset:4px 10px;width:calc(100% - 20px);height:calc(100% - 8px);object-fit:contain}
   .brand:hover .s6-mark{transform:translateX(-2px)}
   .brand:hover .dh-mini{transform:rotate(-4deg)}
   .partner-tag{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:4px 12px;border-radius:999px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
@@ -174,10 +174,11 @@
   /* Logo pill: crossfades between both studio logos */
   .pill.logo{position:relative;width:2.1em;height:.9em;background:#fff;box-shadow:inset 0 0 0 1px var(--line-2);cursor:pointer}
   .pill.logo img{position:absolute;inset:0;width:100%;height:100%;transition:opacity .9s var(--ease),transform .9s var(--ease)}
-  .pill.logo .l-dh{object-fit:cover;object-position:50% 52%;transform:scale(.94)}
-  .pill.logo:hover .l-dh{transform:scale(1.08)}
+  .pill.logo .l-dh{object-fit:contain;padding:.1em .2em}
+  .pill.logo:hover .l-dh{transform:scale(1.06)}
   .s6-hero{height:.7em;width:auto;flex-shrink:0;margin:0 .02em}
   .mix .times{font-size:.9em;color:var(--dim)}
+  .mix .grp{display:inline-flex;align-items:center;gap:.22em;white-space:nowrap}
   .pill{width:1.52em;height:.56em;flex-shrink:0;border-radius:999px;overflow:hidden;display:inline-block;transition:transform .8s var(--ease)}
   .pill:hover{transform:scale(1.06) rotate(-4deg)}
   .pill svg{display:block;width:100%;height:100%}
@@ -379,7 +380,7 @@
   .f-logo img{height:16px;width:auto;filter:invert(1)}
   .f-logo .fx{color:#6A6A6A;font-weight:400}
   .f-logo .dhp{position:relative;width:56px;height:24px;border-radius:99px;overflow:hidden;background:#fff;flex-shrink:0}
-  .f-logo .dhp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%;filter:none;transform:scale(.94)}
+  .f-logo .dhp img{position:absolute;inset:3px 6px;width:calc(100% - 12px);height:calc(100% - 6px);object-fit:contain;filter:none}
 
   /* ---------- Interactive case previews ---------- */
   .work{row-gap:112px;margin-top:112px}
@@ -587,12 +588,12 @@
 
 
   /* Credit badges and official logo lockups */
-  .dh-crop{--h:24px;position:relative;display:inline-block;height:var(--h);width:calc(var(--h) * 2.45);overflow:hidden;flex-shrink:0}
-  .dh-crop img{position:absolute;max-width:none;width:calc(var(--h) * 2.759);height:calc(var(--h) * 2.759);left:calc(var(--h) * -0.172);top:calc(var(--h) * -0.931)}
+  .dh-crop{--h:24px;display:inline-flex;align-items:center;height:var(--h);flex-shrink:0}
+  .dh-crop img{display:block;height:100%;width:auto;max-width:none}
   .credit{position:absolute;right:24px;top:24px;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line-2);font-size:12px;line-height:16px;font-weight:500;color:var(--muted);z-index:2;box-shadow:0 8px 24px -16px rgba(19,18,9,.35);transition:transform .6s var(--ease)}
   .card:hover .credit{transform:translateY(-2px) rotate(-2deg)}
-  .credit .s6c{height:14px;width:auto}
-  .credit .dh-crop{--h:20px}
+  .credit .s6c{height:16px;width:auto}
+  .credit .dh-crop{--h:26px}
   .foot-logos{margin-top:80px;display:flex;align-items:center;gap:32px;opacity:.18;user-select:none;transition:opacity .8s var(--ease),filter .8s var(--ease)}
   .foot-logos:hover{opacity:.9}
   .foot-logos .s6big{height:112px;width:auto}
@@ -773,7 +774,7 @@
   .side{border-radius:24px;padding:40px;border:1px solid var(--line);background:var(--s1)}
   .side .logo-box{height:112px;border-radius:16px;background:#FFFFFF;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;padding:12px}
   .side .logo-box img{max-height:64px;width:auto}
-  .side.dh-side .logo-box img{max-height:none;height:176px}
+  .side.dh-side .logo-box img{max-height:80px}
   .side h3{font-size:24px;line-height:32px;margin-top:32px}
   .side p{color:var(--muted);margin-top:12px}
   .side ul{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
@@ -939,6 +940,61 @@
   .cookie.show{transform:none}
   .cookie .row{display:flex;gap:8px;margin-top:12px}
 
+
+  /* ---------- Mobile optimisation pass ---------- */
+  @media (max-width:860px){
+    .mix{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:.2em;row-gap:.06em}
+    .mix .ln{display:contents}
+    .hero{min-height:auto;padding:120px 0 56px}
+    .board-pane{padding:16px 12px 12px}
+    .note{font-size:max(3.2cqw,16px)}
+    .sticky{font-size:max(2.8cqw,13px)}
+    .cur span{font-size:max(1.2cqw,9px)}
+  }
+  @media (max-width:760px){
+    .scrawl,.scrawl.s-tl,.scrawl.s-tr{position:relative;inset:auto;display:block;max-width:none;margin:0 8px 12px;text-align:left;font-size:22px;line-height:22px}
+    .scrawl svg{display:none}
+    .work{row-gap:48px;margin-top:64px}
+    .pv-design .hint,.pv-brand .seal2,.pv-brand .apps,.pv-brand .dim-l{display:none}
+    .pv-brand .wm{font-size:44px}
+    .pv-brand .wm .dotc{width:48px;height:48px;right:-20px;top:-18px}
+    .pv-brand .hint{left:176px;bottom:22px}
+    .stats{grid-template-columns:1fr 1fr;gap:8px}
+    .stat{padding:20px}
+    .stat .n{font-size:36px}
+    .stat .n sup{font-size:18px}
+    .stat p{margin-top:8px;font-size:12px;line-height:16px}
+    .f-pass > div:first-child{grid-column:1 / -1}
+    .f-board .btn{font-size:14px;line-height:20px;text-align:center}
+    .f-top{gap:16px}
+    .f-eta{width:100%}
+    .cookie{right:16px;max-width:none}
+    .vref{padding:20px}
+    .quote,.side{padding:24px}
+    .final{padding:40px 16px}
+    .foot{gap:32px}
+  }
+  @media (max-width:520px){
+    .kit{height:260px}
+    .kit .bcard{width:148px;height:92px;padding:12px;transform:translate(-64px,-28px) rotate(-10deg)}
+    .kit .bcard b{font-size:16px}
+    .kit .icon{width:64px;height:64px;border-radius:18px;transform:translate(84px,-64px) rotate(8deg)}
+    .kit .icon span{width:32px;height:32px}
+    .kit .poster{width:100px;height:136px;transform:translate(28px,30px) rotate(4deg)}
+    .kit .poster b{font-size:24px;line-height:24px}
+    .kit .chips{transform:translate(-88px,82px)}
+    .kit:hover .bcard{transform:translate(-72px,-36px) rotate(-12deg)}
+    .kit:hover .icon{transform:translate(92px,-72px) rotate(12deg)}
+    .kit .cap{display:none}
+    .pipe{padding:24px 4px 16px}
+    .node{font-size:10px;line-height:14px}
+    .node b{font-size:12px;line-height:16px}
+    .wire{margin:0 4px}
+    .term{font-size:11px;line-height:18px}
+    .lt .m{width:52px;font-size:10px}
+    .hero-proof{justify-content:center}
+    .journey{padding:16px 0 64px}
+  }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
     .rv,.mix .tok{opacity:1;transform:none;filter:none}
@@ -956,7 +1012,7 @@
     <a href="#top" class="brand" aria-label="STAT6 in partnership with Design Hub Template, home">
       <img class="s6-mark" src="assets/stat6-logo.png" alt="STAT6">
       <span class="x" aria-hidden="true">×</span>
-      <span class="dh-mini" aria-hidden="true"><img src="assets/design-hub-logo.png" alt=""></span>
+      <span class="dh-mini" aria-hidden="true"><img src="assets/design-hub-logo-trim.png" alt=""></span>
     </a>
     <nav class="ovals" aria-label="Primary">
       <a class="oval" href="#work">Projects<svg viewBox="0 0 160 64" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="80" cy="32" rx="78" ry="29" transform="rotate(-2 80 32)"/><ellipse cx="81" cy="33" rx="77" ry="28" transform="rotate(1.5 80 32)"/></svg></a>
@@ -988,9 +1044,11 @@
       <span class="ln" aria-hidden="true">
         <em class="tok">Hi, we’re</em>
         <span class="eyes tok shape" id="eyes" title="Click me"><span class="eye"><i></i></span><span class="eye"><i></i></span></span>
+        <span class="grp">
         <img class="s6-hero tok" src="assets/stat6-logo.png" alt="">
         <em class="tok times">×</em>
-        <span class="pill logo tok shape" title="Design partner: Design Hub Template"><img class="l-dh" src="assets/design-hub-logo.png" alt=""></span>
+        <span class="pill logo tok shape" title="Design partner: Design Hub Template"><img class="l-dh" src="assets/design-hub-logo-trim.png" alt=""></span>
+        </span>
       </span>
       <span class="ln" aria-hidden="true">
         <span class="pill tok shape"><svg viewBox="0 0 200 72" preserveAspectRatio="none"><rect width="200" height="72" fill="#FF5EC4"/><path class="wave" d="M92 -4 C 108 10, 78 24, 94 36 C 110 48, 78 62, 94 76 L220 76 L220 -4Z" fill="#FF5A1F"/></svg></span>
@@ -1057,7 +1115,7 @@
         <span class="f-remain">-4 WKS 02 D</span>
       </div>
       <div class="f-pass" aria-hidden="true">
-        <div><small>Flight</small><b class="f-logo"><img src="assets/stat6-logo.png" alt="STAT6"><span class="fx">×</span><span class="dhp"><img src="assets/design-hub-logo.png" alt="Design Hub Template"></span><span>001</span></b></div>
+        <div><small>Flight</small><b class="f-logo"><img src="assets/stat6-logo.png" alt="STAT6"><span class="fx">×</span><span class="dhp"><img src="assets/design-hub-logo-trim.png" alt="Design Hub Template"></span><span>001</span></b></div>
         <div><small>Class</small><b class="lime">First, all inclusive</b></div>
         <div><small>Gate</small><b>Strategy call</b></div>
         <div><small>Crew</small><b>AI · Brand · Web</b></div>
@@ -1229,7 +1287,7 @@
       </article>
       <article class="card c-span3 rv">
         <div class="spot"></div>
-        <span class="credit">Designed by <span class="dh-crop"><img src="assets/design-hub-logo.png" alt="Design Hub Template"></span></span>
+        <span class="credit">Designed by <span class="dh-crop"><img src="assets/design-hub-logo-trim.png" alt="Design Hub Template"></span></span>
         <div class="ic"><i class="ph ph-pen-nib"></i></div>
         <h3>Brand identity that wins rooms</h3>
         <p>Naming, strategy, logo systems, typography and guidelines crafted with our design partner Design Hub Template, winners of 23 international design awards.</p>
@@ -1244,7 +1302,7 @@
       </article>
       <article class="card c-span3 rv d1">
         <div class="spot"></div>
-        <span class="credit">Designed by <span class="dh-crop"><img src="assets/design-hub-logo.png" alt="Design Hub Template"></span></span>
+        <span class="credit">Designed by <span class="dh-crop"><img src="assets/design-hub-logo-trim.png" alt="Design Hub Template"></span></span>
         <div class="ic"><i class="ph ph-browsers"></i></div>
         <h3>Exclusive websites, never templates</h3>
         <p>Custom designed and hand built sites that load in under one second and turn visitors into booked calls.</p>
@@ -1317,7 +1375,7 @@
       </div>
       <div class="plus" aria-hidden="true"><span class="morph" data-auto="1"></span></div>
       <div class="side dh-side rv d1">
-        <div class="logo-box"><img src="assets/design-hub-logo.png" alt="Design Hub Template logo"></div>
+        <div class="logo-box"><img src="assets/design-hub-logo-trim.png" alt="Design Hub Template logo"></div>
         <span class="partner-tag partner"><i class="ph ph-handshake"></i>Design partner</span>
         <h3 style="margin-top:16px">Design Hub Template</h3>
         <p>Award winning brand and digital design studio, working inside STAT6 project teams.</p>
@@ -1619,7 +1677,7 @@
   <div class="wrap">
     <div class="foot">
       <div>
-        <a href="#top" class="brand" aria-label="STAT6 in partnership with Design Hub Template"><img class="s6-mark" src="assets/stat6-logo.png" alt="STAT6"><span class="x" aria-hidden="true">×</span><span class="dh-mini" aria-hidden="true"><img src="assets/design-hub-logo.png" alt=""></span></a>
+        <a href="#top" class="brand" aria-label="STAT6 in partnership with Design Hub Template"><img class="s6-mark" src="assets/stat6-logo.png" alt="STAT6"><span class="x" aria-hidden="true">×</span><span class="dh-mini" aria-hidden="true"><img src="assets/design-hub-logo-trim.png" alt=""></span></a>
         <p class="blurb">Secure custom AI software and AI engine optimisation by STAT6, with award winning brand and web design by our partner Design Hub Template.</p>
       </div>
       <div><h5>Services</h5><ul><li><a href="#services">Brand identity</a></li><li><a href="#services">Web design</a></li><li><a href="#aeo">AI engine optimisation</a></li><li><a href="#services">Custom AI software</a></li></ul></div>
@@ -1629,7 +1687,7 @@
     <div class="foot-logos" aria-label="STAT6 in partnership with Design Hub Template">
       <img class="s6big" src="assets/stat6-logo.png" alt="STAT6">
       <span class="xx" aria-hidden="true">×</span>
-      <span class="dh-crop"><img src="assets/design-hub-logo.png" alt="Design Hub Template"></span>
+      <span class="dh-crop"><img src="assets/design-hub-logo-trim.png" alt="Design Hub Template"></span>
     </div>
     <div class="legal">
       <span>© 2026 STAT6 AI. Design partner: Design Hub Template. All rights reserved.</span>
@@ -1848,7 +1906,7 @@
     new IntersectionObserver(([e]) => {
       if (e.isIntersecting && !stop) stop = start();
       else if (!e.isIntersecting && stop) { stop(); stop = null; }
-    }, { threshold: .3 }).observe(el);
+    }, { threshold: .12 }).observe(el);
   };
 
   /* AI agent terminal + timer */
@@ -1975,7 +2033,7 @@
     new IntersectionObserver(([e], o) => {
       if (!e.isIntersecting) return;
       flight.classList.add('in'); $('#flightFill').style.width = '62%'; o.disconnect();
-    }, { threshold: .35 }).observe(flight);
+    }, { threshold: .2 }).observe(flight);
     const etas = ['ETA Week 9', 'ETA 63 days', 'ETA Q1 launch'];
     let ei = 0;
     $('#etaSwap').addEventListener('click', () => { ei = (ei + 1) % etas.length; $('#etaText').textContent = etas[ei]; });
