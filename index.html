@@ -107,12 +107,12 @@
 
   /* ---------- NAV (hand drawn ovals) ---------- */
   .nav{position:absolute;inset:0 0 auto 0;z-index:100}
-  .nav .wrap{max-width:1440px;display:flex;align-items:center;justify-content:space-between;padding-top:32px}
+  .nav .wrap{max-width:1440px;display:flex;align-items:center;justify-content:space-between;padding-top:20px}
   .brand{display:flex;align-items:center;gap:12px;font-weight:600;font-size:14px;line-height:20px}
   .brand{gap:12px}
-  .brand .s6-mark{height:28px;width:auto;transition:transform .8s var(--ease)}
+  .brand .s6-mark{height:22px;width:auto;transition:transform .8s var(--ease)}
   .brand .x{font-family:var(--serif);font-style:italic;font-size:24px;line-height:32px}
-  .brand .dh-mini{display:inline-flex;align-items:center;height:40px;transition:transform .8s var(--ease)}
+  .brand .dh-mini{display:inline-flex;align-items:center;height:32px;transition:transform .8s var(--ease)}
   .brand .dh-mini img{display:block;height:100%;width:auto}
   .brand:hover .s6-mark{transform:translateX(-2px)}
   .brand:hover .dh-mini{transform:rotate(-4deg)}
@@ -121,8 +121,8 @@
   .partner-tag.partner{background:#fff;border:1px solid var(--line-2);color:var(--muted)}
   .side.s6-side{background:var(--bg);border-color:var(--ink);box-shadow:0 24px 64px -32px rgba(19,18,9,.3)}
   .brand .x{color:var(--dim)}
-  .ovals{display:flex;gap:24px}
-  .oval{position:relative;display:inline-grid;place-items:center;padding:12px 32px;font-family:var(--serif);font-size:24px;line-height:32px;transition:transform .6s var(--ease)}
+  .ovals{display:flex;gap:12px}
+  .oval{position:relative;display:inline-grid;place-items:center;padding:6px 20px;font-family:var(--serif);font-size:18px;line-height:24px;transition:transform .6s var(--ease)}
   .oval svg{position:absolute;inset:-4px -8px;width:calc(100% + 16px);height:calc(100% + 8px);overflow:visible;pointer-events:none}
   .oval ellipse{fill:none;stroke:var(--text);stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-dasharray:420;stroke-dashoffset:0;transition:stroke-dashoffset 1s var(--ease),stroke .5s var(--ease)}
   .oval:hover{transform:rotate(-3deg)}
@@ -135,17 +135,17 @@
   .burger span:nth-child(1){top:19px}.burger span:nth-child(2){top:27px}
   .menu-open .burger span:nth-child(1){top:23px;transform:rotate(45deg)}
   .menu-open .burger span:nth-child(2){top:23px;transform:rotate(-45deg)}
-  @media (max-width:860px){.ovals{display:none}.burger{display:block}.nav .wrap{padding-top:12px;padding-bottom:12px}.brand{gap:8px}.brand .s6-mark{height:18px}.brand .x{font-size:18px;line-height:24px}.brand .dh-mini{height:26px}.burger{width:40px;height:40px}.burger span{left:11px;width:16px}.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:23px}.menu-open .burger span:nth-child(1),.menu-open .burger span:nth-child(2){top:19px}}
+  @media (max-width:860px){.ovals{display:none}.burger{display:block}.nav .wrap{padding-top:10px;padding-bottom:10px}.brand{gap:6px}.brand .s6-mark{height:15px}.brand .x{font-size:16px;line-height:20px}.brand .dh-mini{height:22px}.burger{width:36px;height:36px}.burger span{left:10px;width:14px}.burger span:nth-child(1){top:13px}.burger span:nth-child(2){top:21px}.menu-open .burger span:nth-child(1),.menu-open .burger span:nth-child(2){top:17px}}
 
   .overlay{position:fixed;inset:0;z-index:99;background:rgba(255,255,255,.8);backdrop-filter:blur(64px);-webkit-backdrop-filter:blur(64px);opacity:0;visibility:hidden;transition:opacity .7s var(--ease),visibility .7s var(--ease);display:flex;flex-direction:column;justify-content:center;padding:96px 24px 48px}
   .menu-open .overlay{opacity:1;visibility:visible}
   .overlay ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
   .overlay li{overflow:hidden}
-  .overlay a{display:block;font-family:var(--serif);font-size:48px;line-height:1.1;padding:4px 0;transform:translateY(48px);opacity:0;transition:transform .8s var(--ease),opacity .8s var(--ease),color .5s var(--ease)}
+  .overlay a{display:block;font-family:var(--serif);font-size:32px;line-height:1.15;padding:4px 0;transform:translateY(48px);opacity:0;transition:transform .8s var(--ease),opacity .8s var(--ease),color .5s var(--ease)}
   .overlay a:hover{color:var(--coral)}
   .menu-open .overlay a{transform:none;opacity:1}
   .overlay li:nth-child(1) a{transition-delay:.1s}.overlay li:nth-child(2) a{transition-delay:.15s}.overlay li:nth-child(3) a{transition-delay:.2s}.overlay li:nth-child(4) a{transition-delay:.25s}.overlay li:nth-child(5) a{transition-delay:.3s}.overlay li:nth-child(6) a{transition-delay:.35s}
-  .overlay .btn{margin-top:32px;align-self:flex-start;opacity:0;transform:translateY(24px);transition:all .8s var(--ease) .4s}
+  .overlay .btn{font-family:var(--sans);font-size:14px;line-height:20px;font-weight:600;padding:8px 16px;margin-top:24px;align-self:flex-start;opacity:0;transform:translateY(24px);transition:all .8s var(--ease) .4s}
   .menu-open .overlay .btn{opacity:1;transform:none}
 
   /* ---------- HERO ---------- */
@@ -1037,7 +1037,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="btn btn-primary btn-lg">Book a strategy call <span class="arrow"><i class="ph ph-arrow-right"></i></span></a>
+  <a href="#contact" class="btn btn-primary btn-sm">Book a strategy call <span class="arrow"><i class="ph ph-arrow-right"></i></span></a>
 </div>
 
 <main id="main">
@@ -1045,9 +1045,9 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap" style="max-width:1440px">
-    <h1 class="mix" aria-label="Hi, we're STAT6 with Design Hub Template, an AI studio that builds software and brands people remember.">
+    <h1 class="mix" aria-label="We're STAT6 with Design Hub Template, an AI studio that builds software and brands people remember.">
       <span class="ln" aria-hidden="true">
-        <em class="tok">Hi, we’re</em>
+        <em class="tok">We’re</em>
         <span class="eyes tok shape" id="eyes" title="Click me"><span class="eye"><i></i></span><span class="eye"><i></i></span></span>
         <span class="grp">
         <img class="s6-hero tok" src="assets/stat6-logo.png" alt="">
