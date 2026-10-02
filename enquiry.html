@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start a project — STAT6 × Design Template Hub</title>
+<meta name="description" content="Tell STAT6 and Design Template Hub what you are launching. Custom AI software, brand identity, websites and AI engine optimisation. We reply within one business day.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Start a project with STAT6 × Design Template Hub">
+<meta property="og:description" content="Share your project and get a scope, timeline and price within one business day.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+  :root{
+    --bg:#FFFFFF;--s1:#F7F6F2;--s2:#EFEDE7;--s3:#E5E2DA;--s4:#D6D2C7;
+    --line:rgba(10,10,8,.08);--line-2:rgba(10,10,8,.14);
+    --text:#0A0A08;--text-2:#2A2A26;--muted:#5E5D57;--dim:#8E8C85;
+    --coral:#F75A5A;--ink:#131209;--lime:#D7F36B;--blue:#1F3BFF;--olive:#4F6B00;
+    --ease:cubic-bezier(0.32,0.72,0,1);
+    --sans:Geist,system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+  @supports (overflow:clip){html,body{overflow-x:clip}}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:24px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.03em;text-wrap:balance}
+  p{margin:0;text-wrap:pretty}
+  em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+  .skip{position:absolute;left:16px;top:-64px;z-index:50;background:var(--text);color:#fff;padding:8px 12px;border-radius:8px;font-weight:600}
+  .skip:focus{top:16px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  @media (max-width:640px){.wrap{padding:0 16px}}
+
+  /* Nav */
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .s6{height:22px;width:auto}
+  .brand .x{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--dim)}
+  .brand .dh{height:32px;width:auto}
+  .back{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;border:1px solid var(--line-2);font-size:14px;line-height:20px;font-weight:500;transition:background-color .5s var(--ease),transform .5s var(--ease)}
+  .back:hover{background:var(--s1);transform:translateX(-2px)}
+  @media (max-width:640px){.nav .wrap{padding-top:10px;padding-bottom:10px}.brand{gap:6px}.brand .s6{height:15px}.brand .x{font-size:16px}.brand .dh{height:22px}.back span{display:none}.back{padding:8px}}
+
+  /* Layout */
+  .page{display:grid;grid-template-columns:1fr 1.25fr;gap:64px;padding:48px 0 96px;align-items:start}
+  .intro{position:sticky;top:32px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow i{width:8px;height:8px;border-radius:99px;background:var(--coral);box-shadow:0 0 0 4px rgba(247,90,90,.16)}
+  h1{font-size:60px;line-height:1;margin-top:16px;letter-spacing:-.045em}
+  h1 em{color:var(--coral);font-size:1.08em}
+  .lead{margin-top:24px;font-size:18px;line-height:28px;color:var(--muted);max-width:460px}
+  .hand{font-family:Caveat,cursive;font-weight:700;font-size:26px;line-height:26px;color:var(--coral);transform:rotate(-3deg);display:inline-block;margin-top:24px}
+  .next{list-style:none;padding:0;margin:40px 0 0;display:grid;gap:16px;counter-reset:n}
+  .next li{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start}
+  .next li::before{counter-increment:n;content:counter(n);width:40px;height:40px;border-radius:99px;display:grid;place-items:center;background:var(--s1);border:1px solid var(--line);font-weight:600;font-size:14px}
+  .next b{display:block;font-size:16px;line-height:24px;font-weight:600}
+  .next span{font-size:14px;line-height:20px;color:var(--muted)}
+  .direct{margin-top:40px;padding:20px;border-radius:16px;border:1px dashed var(--line-2);font-size:14px;line-height:20px;color:var(--muted)}
+  .direct a{color:var(--text);font-weight:600;text-decoration:underline;text-decoration-color:var(--coral);text-underline-offset:4px}
+  @media (max-width:960px){.page{grid-template-columns:1fr;gap:40px;padding:24px 0 64px}.intro{position:static}h1{font-size:48px}}
+  @media (max-width:520px){h1{font-size:40px}.lead{font-size:16px;line-height:24px}.next{margin-top:24px}.direct{margin-top:24px}}
+
+  /* Form card */
+  .card{position:relative;border-radius:24px;background:var(--s1);border:1px solid var(--line);padding:32px}
+  @media (max-width:520px){.card{padding:20px;border-radius:20px}}
+  .progress{display:flex;align-items:center;gap:12px;margin-bottom:24px;font-size:12px;line-height:16px;color:var(--muted)}
+  .progress .bar{flex:1;height:6px;border-radius:99px;background:var(--s3);overflow:hidden}
+  .progress .bar i{display:block;height:100%;width:0;border-radius:99px;background:var(--coral);transition:width .7s var(--ease)}
+  .progress b{color:var(--text);font-weight:600;min-width:32px;text-align:right}
+  fieldset{border:0;margin:0;padding:0}
+  .group{padding:24px 0;border-top:1px solid var(--line)}
+  .group:first-of-type{border-top:0;padding-top:0}
+  .group legend,.gtitle{display:flex;align-items:center;gap:8px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:16px;padding:0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:560px){.grid2{grid-template-columns:1fr}}
+  .field{display:grid;gap:8px}
+  .field + .field,.grid2 + .field,.field + .grid2{margin-top:16px}
+  .grid2 > .field{margin-top:0}
+  label.lbl,.lbl{font-size:14px;line-height:20px;font-weight:600}
+  .lbl small{font-weight:400;color:var(--dim)}
+  input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{width:100%;font:inherit;font-size:16px;line-height:24px;color:var(--text);background:var(--bg);border:1px solid var(--line-2);border-radius:12px;padding:12px 16px;transition:border-color .4s var(--ease),box-shadow .4s var(--ease)}
+  textarea{resize:vertical;min-height:144px}
+  input::placeholder,textarea::placeholder{color:var(--dim)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--coral);box-shadow:0 0 0 4px rgba(247,90,90,.18)}
+  .field.err input,.field.err select,.field.err textarea{border-color:#E5484D}
+  .msg{display:none;font-size:12px;line-height:16px;color:#C2272D}
+  .field.err .msg,.choice.err .msg{display:block}
+  .count{justify-self:end;font-size:12px;line-height:16px;color:var(--dim)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips label{position:relative;cursor:pointer}
+  .chips input{position:absolute;opacity:0;width:1px;height:1px}
+  .chips span{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--line-2);background:var(--bg);font-size:14px;line-height:20px;color:var(--text-2);transition:all .45s var(--ease)}
+  .chips span i{font-size:16px;color:var(--dim);transition:color .45s var(--ease)}
+  .chips label:hover span{border-color:var(--muted)}
+  .chips input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+  .chips input:checked + span i{color:var(--lime)}
+  .chips input:focus-visible + span{outline:2px solid var(--blue);outline-offset:2px}
+  .choice + .choice{margin-top:20px}
+  .choice .lbl{display:block;margin-bottom:12px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .consent{display:flex;gap:12px;align-items:flex-start;margin-top:8px;font-size:14px;line-height:20px;color:var(--muted);cursor:pointer}
+  .consent input{margin-top:2px;width:18px;height:18px;accent-color:var(--coral);flex-shrink:0}
+  .consent a{color:var(--text);text-decoration:underline}
+  .consent.err{color:#C2272D}
+  .submit{margin-top:24px;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:999px;background:var(--text);color:#fff;font-size:16px;line-height:24px;font-weight:600;transition:background-color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .submit:hover{background:var(--coral);transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(247,90,90,.7)}
+  .submit:active{transform:scale(.98)}
+  .submit[disabled]{pointer-events:none;opacity:.8}
+  .submit .arrow{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:99px;background:rgba(255,255,255,.18)}
+  .sk{display:block;width:160px;height:12px;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,.2),rgba(255,255,255,.55),rgba(255,255,255,.2));background-size:200% 100%;animation:sh 1.2s linear infinite}
+  @keyframes sh{to{background-position:-200% 0}}
+  .fine{margin-top:12px;text-align:center;font-size:12px;line-height:16px;color:var(--dim)}
+  .alert{display:none;margin-top:16px;padding:12px 16px;border-radius:12px;background:#FDECEC;color:#8C1D21;font-size:14px;line-height:20px}
+  .alert.show{display:block}
+
+  /* Success */
+  .done{display:none;text-align:left}
+  .card.sent form{display:none}
+  .card.sent .done{display:block;animation:rise .8s var(--ease)}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}}
+  .done .tick{width:64px;height:64px;border-radius:99px;background:var(--lime);display:grid;place-items:center;font-size:32px;color:var(--ink)}
+  .done h2{margin-top:24px;font-size:36px;line-height:40px}
+  .done h2 em{color:var(--coral)}
+  .done p{margin-top:12px;color:var(--muted)}
+  .done .sum{margin-top:24px;padding:16px;border-radius:16px;background:var(--bg);border:1px solid var(--line);display:grid;gap:8px;font-size:14px;line-height:20px}
+  .done .sum div{display:flex;justify-content:space-between;gap:16px}
+  .done .sum span{color:var(--muted)}
+  .done .sum b{font-weight:600;text-align:right}
+  .done .demo{display:none;margin-top:16px;padding:12px 16px;border-radius:12px;background:#FFF4D6;color:#7A5200;font-size:13px;line-height:18px}
+  .card.sent.demo-mode .done .demo{display:block}
+  .done .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .btn2{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:14px;line-height:20px;font-weight:600;border:1px solid var(--line-2);transition:background-color .5s var(--ease)}
+  .btn2:hover{background:var(--bg)}
+  .btn2.dark{background:var(--text);color:#fff;border-color:var(--text)}
+  .btn2.dark:hover{background:var(--coral);border-color:var(--coral)}
+
+  footer{border-top:1px solid var(--line);padding:24px 0 32px;font-size:14px;line-height:20px;color:var(--dim)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  footer a{color:var(--text);font-weight:600;text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:2px;text-underline-offset:4px}
+
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#enquiry">Skip to the form</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="brand" aria-label="STAT6 in partnership with Design Template Hub, home">
+      <img class="s6" src="/assets/stat6-logo.png" alt="STAT6">
+      <span class="x" aria-hidden="true">×</span>
+      <img class="dh" src="/assets/design-hub-logo-trim.png" alt="Design Template Hub">
+    </a>
+    <a href="/" class="back"><i class="ph ph-arrow-left"></i><span>Back to home</span></a>
+  </div>
+</header>
+
+<main class="wrap page" id="main">
+  <section class="intro" aria-labelledby="title">
+    <span class="eyebrow"><i></i>Start a project</span>
+    <h1 id="title">Tell us what you're <em>launching.</em></h1>
+    <p class="lead">Share a few details about your business and what you need. A STAT6 lead and a Design Template Hub creative director will read every word.</p>
+    <span class="hand">We reply within one business day ↘</span>
+    <ol class="next">
+      <li><div><b>We read your brief</b><span>No sales script. The people who would build it review it first.</span></div></li>
+      <li><div><b>A 30 minute strategy call</b><span>We send three time slots and sign your NDA before details.</span></div></li>
+      <li><div><b>Scope, timeline and price</b><span>A fixed proposal within 48 hours of the call.</span></div></li>
+    </ol>
+    <div class="direct">Prefer email? Write to <a href="mailto:hello@stat6.ai">hello@stat6.ai</a></div>
+  </section>
+
+  <section class="card" id="enquiry" aria-label="Enquiry form">
+    <form id="enqForm" novalidate>
+      <div class="progress" aria-hidden="true"><span>Form progress</span><span class="bar"><i id="progBar"></i></span><b id="progTxt">0%</b></div>
+
+      <fieldset class="group">
+        <legend><i class="ph ph-user"></i>About you</legend>
+        <div class="grid2">
+          <div class="field"><label class="lbl" for="name">Full name</label><input type="text" id="name" name="name" autocomplete="name" placeholder="Ananya Iyer" required><span class="msg">Please enter your name.</span></div>
+          <div class="field"><label class="lbl" for="email">Work email</label><input type="email" id="email" name="email" autocomplete="email" placeholder="ananya@company.com" required><span class="msg">Please enter a valid email address.</span></div>
+        </div>
+        <div class="grid2" style="margin-top:16px">
+          <div class="field"><label class="lbl" for="phone">Phone <small>(optional)</small></label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+91 98450 21734"><span class="msg">Please enter a valid phone number.</span></div>
+          <div class="field"><label class="lbl" for="company">Company</label><input type="text" id="company" name="company" autocomplete="organization" placeholder="Company or project name" required><span class="msg">Please enter your company or project name.</span></div>
+        </div>
+        <div class="field" style="margin-top:16px"><label class="lbl" for="website">Current website <small>(optional)</small></label><input type="url" id="website" name="website" autocomplete="url" placeholder="https://"><span class="msg">Please enter a full link, starting with https://</span></div>
+      </fieldset>
+
+      <fieldset class="group">
+        <legend><i class="ph ph-squares-four"></i>What you need</legend>
+        <div class="choice" id="servicesBox">
+          <span class="lbl">Services <small>(pick all that apply)</small></span>
+          <div class="chips">
+            <label><input type="checkbox" name="services" value="Custom AI software"><span><i class="ph ph-cpu"></i>Custom AI software</span></label>
+            <label><input type="checkbox" name="services" value="AI engine optimisation"><span><i class="ph ph-magnifying-glass"></i>AI engine optimisation</span></label>
+            <label><input type="checkbox" name="services" value="Brand identity"><span><i class="ph ph-pen-nib"></i>Brand identity</span></label>
+            <label><input type="checkbox" name="services" value="Website"><span><i class="ph ph-browsers"></i>Website</span></label>
+            <label><input type="checkbox" name="services" value="Business launch"><span><i class="ph ph-rocket-launch"></i>Business launch</span></label>
+          </div>
+          <span class="msg">Please choose at least one service.</span>
+        </div>
+        <div class="choice" id="budgetBox">
+          <span class="lbl">Budget range</span>
+          <div class="chips">
+            <label><input type="radio" name="budget" value="Under $15k"><span>Under $15k</span></label>
+            <label><input type="radio" name="budget" value="$15k to $40k"><span>$15k to $40k</span></label>
+            <label><input type="radio" name="budget" value="$40k to $120k"><span>$40k to $120k</span></label>
+            <label><input type="radio" name="budget" value="$120k to $400k"><span>$120k to $400k</span></label>
+            <label><input type="radio" name="budget" value="$400k and above"><span>$400k and above</span></label>
+            <label><input type="radio" name="budget" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+          <span class="msg">Please choose a budget range.</span>
+        </div>
+        <div class="choice" id="timelineBox">
+          <span class="lbl">When do you want to launch?</span>
+          <div class="chips">
+            <label><input type="radio" name="timeline" value="As soon as possible"><span>As soon as possible</span></label>
+            <label><input type="radio" name="timeline" value="In 1 to 3 months"><span>In 1 to 3 months</span></label>
+            <label><input type="radio" name="timeline" value="In 3 to 6 months"><span>In 3 to 6 months</span></label>
+            <label><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="group">
+        <legend><i class="ph ph-note-pencil"></i>Your project</legend>
+        <div class="field"><label class="lbl" for="message">Project details</label><textarea id="message" name="message" maxlength="2000" placeholder="What are you building, who is it for, and what does success look like?" required></textarea><span class="count" id="count">0 / 2000</span><span class="msg">Please tell us a little about the project (at least 20 characters).</span></div>
+        <div class="field" style="margin-top:16px"><label class="lbl" for="source">How did you hear about us? <small>(optional)</small></label>
+          <select id="source" name="source">
+            <option value="">Choose one</option>
+            <option>Google or AI assistant search</option><option>LinkedIn</option><option>Instagram</option><option>Referral from a client</option><option>Event or award</option><option>Other</option>
+          </select>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="company_url">Leave this empty</label><input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off"></div>
+        <label class="consent" id="consentBox"><input type="checkbox" id="consent" required><span>I agree that STAT6 and Design Template Hub may contact me about this enquiry, as described in the <a href="/#privacy">privacy policy</a>.</span></label>
+      </fieldset>
+
+      <button type="submit" class="submit" id="send">Send enquiry <span class="arrow"><i class="ph ph-arrow-right"></i></span></button>
+      <div class="alert" id="alert" role="alert">We could not send your enquiry. Please check your connection and try again, or email hello@stat6.ai.</div>
+      <p class="fine">Protected by a spam filter. We never share your details.</p>
+    </form>
+
+    <div class="done" role="status" aria-live="polite">
+      <div class="tick"><i class="ph-bold ph-check"></i></div>
+      <h2>Thanks, <em id="doneName">friend</em>. Your enquiry is in.</h2>
+      <p>A STAT6 lead will email you within one business day with three time slots for your strategy call.</p>
+      <div class="sum" id="summary"></div>
+      <p class="demo">Preview mode: the Google Form is not connected yet, so this enquiry was not stored. Add your form link in assets/google-form.js.</p>
+      <div class="row"><a href="/" class="btn2 dark">Back to home <i class="ph ph-arrow-right"></i></a><button type="button" class="btn2" id="again">Send another enquiry</button></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 STAT6 AI. Design partner: Design Template Hub.</span>
+    <span>Designed and built by <a href="https://www.instagram.com/theleveragegame/" target="_blank" rel="noopener noreferrer">Aarupadaiyar</a></span>
+  </div>
+</footer>
+
+<script src="/assets/google-form.js"></script>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const form = $('#enqForm'), card = $('#enquiry'), send = $('#send'), alertBox = $('#alert');
+  const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  const urlOk = v => !v || /^https?:\/\/[^\s.]+\.[^\s]{2,}/i.test(v);
+  const phoneOk = v => !v || /^[+()\d\s.-]{7,20}$/.test(v);
+
+  // Pre-select services passed in the link, e.g. /enquiry?service=Website
+  const pre = new URLSearchParams(location.search).getAll('service');
+  $$('input[name=services]').forEach(c => { if (pre.includes(c.value)) c.checked = true; });
+
+  const rules = {
+    name: el => el.value.trim().length > 1,
+    email: el => emailOk(el.value.trim()),
+    phone: el => phoneOk(el.value.trim()),
+    company: el => el.value.trim().length > 0,
+    website: el => urlOk(el.value.trim()),
+    message: el => el.value.trim().length >= 20,
+  };
+  const checkField = id => {
+    const el = $('#' + id), ok = rules[id](el), f = el.closest('.field');
+    f.classList.toggle('err', !ok); el.setAttribute('aria-invalid', !ok); return ok;
+  };
+  const checkGroup = (box, name) => {
+    const ok = $$(`input[name=${name}]:checked`).length > 0;
+    $(box).classList.toggle('err', !ok); return ok;
+  };
+  Object.keys(rules).forEach(id => $('#' + id).addEventListener('blur', () => { if ($('#' + id).value) checkField(id); }));
+
+  // Live progress across the required answers
+  const progress = () => {
+    const done = [rules.name($('#name')), rules.email($('#email')), rules.company($('#company')),
+      $$('input[name=services]:checked').length > 0, $$('input[name=budget]:checked').length > 0,
+      rules.message($('#message')), $('#consent').checked].filter(Boolean).length;
+    const pct = Math.round(done / 7 * 100);
+    $('#progBar').style.width = pct + '%'; $('#progTxt').textContent = pct + '%';
+  };
+  form.addEventListener('input', progress); form.addEventListener('change', progress);
+  $('#message').addEventListener('input', e => { $('#count').textContent = `${e.target.value.length} / 2000`; });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    alertBox.classList.remove('show');
+    const okFields = Object.keys(rules).map(checkField);
+    const okServices = checkGroup('#servicesBox', 'services');
+    const okBudget = checkGroup('#budgetBox', 'budget');
+    const okConsent = $('#consent').checked; $('#consentBox').classList.toggle('err', !okConsent);
+    if (okFields.includes(false) || !okServices || !okBudget || !okConsent) {
+      const first = form.querySelector('.field.err input, .field.err textarea, .choice.err input, #consentBox.err input');
+      if (first) { first.focus({ preventScroll: true }); first.closest('.field, .choice, .consent').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      return;
+    }
+    if ($('#company_url').value) { card.classList.add('sent'); return; } // spam bot, pretend success
+
+    const data = {
+      name: $('#name').value.trim(), email: $('#email').value.trim(), phone: $('#phone').value.trim(),
+      company: $('#company').value.trim(), website: $('#website').value.trim(),
+      services: $$('input[name=services]:checked').map(c => c.value),
+      budget: ($('input[name=budget]:checked') || {}).value || '',
+      timeline: ($('input[name=timeline]:checked') || {}).value || '',
+      message: $('#message').value.trim(), source: $('#source').value, page: 'Enquiry page',
+    };
+    send.disabled = true; const label = send.innerHTML; send.innerHTML = '<span class="sk"></span>';
+    const res = await window.submitToGoogleForm(data);
+    send.disabled = false; send.innerHTML = label;
+    if (!res.ok) { alertBox.classList.add('show'); return; }
+
+    $('#doneName').textContent = data.name.split(' ')[0];
+    const rows = [['Company', data.company], ['Services', data.services.join(', ')], ['Budget', data.budget], ['Timeline', data.timeline || 'Not specified']];
+    $('#summary').innerHTML = rows.map(([k, v]) => `<div><span>${k}</span><b></b></div>`).join('');
+    $$('#summary b').forEach((b, i) => { b.textContent = rows[i][1]; });
+    card.classList.toggle('demo-mode', !!res.demo);
+    card.classList.add('sent');
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  $('#again').addEventListener('click', () => { form.reset(); progress(); $('#count').textContent = '0 / 2000'; card.classList.remove('sent', 'demo-mode'); $('#name').focus(); });
+})();
+</script>
+</body>
+</html>

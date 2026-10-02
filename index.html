@@ -1021,7 +1021,7 @@
       <a class="oval" href="#work">Projects<svg viewBox="0 0 160 64" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="80" cy="32" rx="78" ry="29" transform="rotate(-2 80 32)"/><ellipse cx="81" cy="33" rx="77" ry="28" transform="rotate(1.5 80 32)"/></svg></a>
       <a class="oval" href="#services">Services<svg viewBox="0 0 160 64" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="80" cy="32" rx="78" ry="29" transform="rotate(2 80 32)"/><ellipse cx="79" cy="31" rx="77" ry="28" transform="rotate(-1.5 80 32)"/></svg></a>
       <a class="oval" href="#collab">About<svg viewBox="0 0 160 64" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="80" cy="32" rx="78" ry="29" transform="rotate(-1.5 80 32)"/><ellipse cx="80" cy="33" rx="77" ry="28" transform="rotate(2 80 32)"/></svg></a>
-      <a class="oval" href="#contact">Contact<svg viewBox="0 0 160 64" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="80" cy="32" rx="78" ry="29" transform="rotate(1.5 80 32)"/><ellipse cx="81" cy="31" rx="77" ry="28" transform="rotate(-2 80 32)"/></svg></a>
+      <a class="oval" href="/enquiry">Contact<svg viewBox="0 0 160 64" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="80" cy="32" rx="78" ry="29" transform="rotate(1.5 80 32)"/><ellipse cx="81" cy="31" rx="77" ry="28" transform="rotate(-2 80 32)"/></svg></a>
     </nav>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
   </div>
@@ -1033,7 +1033,7 @@
     <li><a href="#collab">About</a></li>
     <li><a href="#security">Security</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="/enquiry">Contact</a></li>
   </ul>
 </div>
 
@@ -1647,11 +1647,11 @@
           <fieldset class="field" style="border:0;padding:0;margin:0">
             <legend style="font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px">What do you need?</legend>
             <div class="pills">
-              <label><input type="checkbox" name="need" value="brand"><span>Brand identity</span></label>
-              <label><input type="checkbox" name="need" value="web"><span>Website</span></label>
-              <label><input type="checkbox" name="need" value="aeo"><span>AI engine optimisation</span></label>
-              <label><input type="checkbox" name="need" value="ai"><span>Custom AI software</span></label>
-              <label><input type="checkbox" name="need" value="launch"><span>Business launch</span></label>
+              <label><input type="checkbox" name="need" value="Brand identity"><span>Brand identity</span></label>
+              <label><input type="checkbox" name="need" value="Website"><span>Website</span></label>
+              <label><input type="checkbox" name="need" value="AI engine optimisation"><span>AI engine optimisation</span></label>
+              <label><input type="checkbox" name="need" value="Custom AI software"><span>Custom AI software</span></label>
+              <label><input type="checkbox" name="need" value="Business launch"><span>Business launch</span></label>
             </div>
           </fieldset>
           <div class="field"><label for="f-budget">Budget range</label>
@@ -1661,7 +1661,7 @@
             </select><span class="msg">Please choose a budget range.</span></div>
           <div class="field"><label for="f-msg">Project details</label><textarea id="f-msg" name="message" placeholder="Tell us what you are launching and when"></textarea></div>
           <button type="submit" class="btn btn-primary btn-lg" id="submit">Book my strategy call <span class="arrow"><i class="ph ph-arrow-right"></i></span></button>
-          <p class="fine">By submitting you agree to our <a href="#privacy" style="text-decoration:underline">privacy policy</a>. We never share your details.</p>
+          <p class="fine">By submitting you agree to our <a href="#privacy" style="text-decoration:underline">privacy policy</a>. Want to share more? <a href="/enquiry" style="text-decoration:underline">Use the full enquiry form</a>.</p>
         </div>
         <div class="success" role="status">
           <i class="ph-fill ph-check-circle"></i>
@@ -1684,7 +1684,7 @@
       </div>
       <div><h5>Services</h5><ul><li><a href="#services">Brand identity</a></li><li><a href="#services">Web design</a></li><li><a href="#aeo">AI engine optimisation</a></li><li><a href="#services">Custom AI software</a></li></ul></div>
       <div><h5>Studio</h5><ul><li><a href="#collab">About STAT6</a></li><li><a href="#work">Selected work</a></li><li><a href="#process">Process</a></li><li><a href="#security">Security</a></li></ul></div>
-      <div><h5>Contact</h5><ul><li><a href="mailto:hello@stat6.ai">hello@stat6.ai</a></li><li><a href="#contact">Book a call</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:hello@stat6.ai">hello@stat6.ai</a></li><li><a href="/enquiry">Start a project</a></li><li><a href="#faq">FAQ</a></li></ul></div>
     </div>
     <div class="foot-logos" aria-label="STAT6 in partnership with Design Template Hub">
       <img class="s6big" src="assets/stat6-logo.png" alt="STAT6">
@@ -1705,6 +1705,7 @@
   <div class="row"><button class="btn btn-ghost btn-sm" data-c="essential">Essential only</button><button class="btn btn-primary btn-sm" data-c="all">Accept all</button></div>
 </div>
 
+<script src="assets/google-form.js"></script>
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2276,13 +2277,21 @@
   };
   const required = $$('.field', form).filter(f => f.querySelector('[required]'));
   required.forEach(f => f.querySelector('[required]').addEventListener('blur', () => check(f)));
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const results = required.map(check);
     if (results.includes(false)) { required[results.indexOf(false)].querySelector('[required]').focus(); return; }
+    const label = btn.innerHTML;
     btn.disabled = true;
     btn.innerHTML = '<span style="width:160px"><span class="sk"></span></span>';
-    setTimeout(() => form.classList.add('done'), 1400);
+    const res = await window.submitToGoogleForm({
+      name: $('#f-name').value.trim(), email: $('#f-email').value.trim(), company: $('#f-co').value.trim(),
+      services: $$('input[name=need]:checked', form).map(c => c.value),
+      budget: $('#f-budget').value, message: $('#f-msg').value.trim(), page: 'Home page contact form',
+    });
+    btn.disabled = false; btn.innerHTML = label;
+    if (!res.ok) { $('.fine', form).textContent = 'We could not send your request. Please try again or email hello@stat6.ai.'; return; }
+    form.classList.add('done');
   });
 
   /* Cookie consent */
