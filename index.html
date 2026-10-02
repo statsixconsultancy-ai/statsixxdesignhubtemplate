@@ -1643,7 +1643,10 @@
             <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" placeholder="Ananya Iyer" required><span class="msg">Please enter your name.</span></div>
             <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="ananya@company.com" required><span class="msg">Please enter a valid email address.</span></div>
           </div>
-          <div class="field"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization" placeholder="Company name"></div>
+          <div class="row2">
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98450 21734" required><span class="msg">Please enter a valid phone number.</span></div>
+            <div class="field"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization" placeholder="Company name"></div>
+          </div>
           <fieldset class="field" style="border:0;padding:0;margin:0">
             <legend style="font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px">What do you need?</legend>
             <div class="pills">
@@ -2272,7 +2275,8 @@
   const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
   const check = f => {
     const input = f.querySelector('[required]');
-    const ok = input.type === 'email' ? emailOk(input.value.trim()) : input.value.trim() !== '';
+    const v = input.value.trim();
+    const ok = input.type === 'email' ? emailOk(v) : input.type === 'tel' ? /^[+()\d\s.-]{7,20}$/.test(v) && (v.match(/\d/g) || []).length >= 7 : v !== '';
     f.classList.toggle('err', !ok); input.setAttribute('aria-invalid', !ok); return ok;
   };
   const required = $$('.field', form).filter(f => f.querySelector('[required]'));
@@ -2285,7 +2289,7 @@
     btn.disabled = true;
     btn.innerHTML = '<span style="width:160px"><span class="sk"></span></span>';
     const res = await window.submitToGoogleForm({
-      name: $('#f-name').value.trim(), email: $('#f-email').value.trim(), company: $('#f-co').value.trim(),
+      name: $('#f-name').value.trim(), email: $('#f-email').value.trim(), phone: $('#f-phone').value.trim(), company: $('#f-co').value.trim(),
       services: $$('input[name=need]:checked', form).map(c => c.value),
       budget: $('#f-budget').value, message: $('#f-msg').value.trim(), page: 'Home page contact form',
     });

@@ -188,7 +188,7 @@
           <div class="field"><label class="lbl" for="email">Work email</label><input type="email" id="email" name="email" autocomplete="email" placeholder="ananya@company.com" required><span class="msg">Please enter a valid email address.</span></div>
         </div>
         <div class="grid2" style="margin-top:16px">
-          <div class="field"><label class="lbl" for="phone">Phone <small>(optional)</small></label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+91 98450 21734"><span class="msg">Please enter a valid phone number.</span></div>
+          <div class="field"><label class="lbl" for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+91 98450 21734" required><span class="msg">Please enter a valid phone number.</span></div>
           <div class="field"><label class="lbl" for="company">Company</label><input type="text" id="company" name="company" autocomplete="organization" placeholder="Company or project name" required><span class="msg">Please enter your company or project name.</span></div>
         </div>
         <div class="field" style="margin-top:16px"><label class="lbl" for="website">Current website <small>(optional)</small></label><input type="url" id="website" name="website" autocomplete="url" placeholder="https://"><span class="msg">Please enter a full link, starting with https://</span></div>
@@ -274,7 +274,7 @@
   const form = $('#enqForm'), card = $('#enquiry'), send = $('#send'), alertBox = $('#alert');
   const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
   const urlOk = v => !v || /^https?:\/\/[^\s.]+\.[^\s]{2,}/i.test(v);
-  const phoneOk = v => !v || /^[+()\d\s.-]{7,20}$/.test(v);
+  const phoneOk = v => /^[+()\d\s.-]{7,20}$/.test(v) && (v.match(/\d/g) || []).length >= 7;
 
   // Pre-select services passed in the link, e.g. /enquiry?service=Website
   const pre = new URLSearchParams(location.search).getAll('service');
@@ -300,10 +300,10 @@
 
   // Live progress across the required answers
   const progress = () => {
-    const done = [rules.name($('#name')), rules.email($('#email')), rules.company($('#company')),
+    const done = [rules.name($('#name')), rules.email($('#email')), rules.phone($('#phone')), rules.company($('#company')),
       $$('input[name=services]:checked').length > 0, $$('input[name=budget]:checked').length > 0,
       rules.message($('#message')), $('#consent').checked].filter(Boolean).length;
-    const pct = Math.round(done / 7 * 100);
+    const pct = Math.round(done / 8 * 100);
     $('#progBar').style.width = pct + '%'; $('#progTxt').textContent = pct + '%';
   };
   form.addEventListener('input', progress); form.addEventListener('change', progress);
