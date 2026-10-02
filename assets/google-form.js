@@ -32,7 +32,7 @@
   That's it. The script reads the form ID and every question ID from the link.
   ────────────────────────────────────────────────────────────────────────────
 */
-window.GOOGLE_FORM_PREFILLED_LINK = '';
+window.GOOGLE_FORM_PREFILLED_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLSc3fU7SRBtx5WCAYEkp6VrorSujBt45SNWklCYKIrmGz_LKJQ/viewform?usp=pp_url&entry.2047711667=name&entry.603962689=email&entry.61779404=phone&entry.545504604=company&entry.821294825=website&entry.784909640=Brand+identity&entry.784909640=Website&entry.784909640=AI+engine+optimisation&entry.784909640=Custom+AI+software&entry.784909640=Business+launch&entry.946410151=budget&entry.1140510383=timeline&entry.1241595101=message&entry.937733079=source&entry.875883412=page';
 
 /* Optional: set IDs by hand instead of using the pre-filled link above.
    formId is the long code between /d/e/ and /viewform in the form's link.  */
@@ -75,6 +75,12 @@ window.GOOGLE_FORM_MANUAL = {
     if (!cfg || !cfg.formId) {
       console.warn('[enquiry] Google Form is not connected yet. See assets/google-form.js. Submission data:', data);
       return { ok: true, demo: true };
+    }
+    // No Services checkbox question in the form yet: keep the choices by adding them to the project details.
+    if (!cfg.fields.services && Array.isArray(data.services) && data.services.length) {
+      data = { ...data, message: `Services: ${data.services.join(', ')}
+
+${data.message || ''}`.trim() };
     }
     const body = new URLSearchParams();
     Object.entries(data).forEach(([key, val]) => {
