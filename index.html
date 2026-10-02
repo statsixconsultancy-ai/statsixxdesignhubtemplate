@@ -919,6 +919,15 @@
   @media (max-width:960px){.final{grid-template-columns:1fr;padding:48px 24px;gap:40px}.final h2{font-size:48px}}
   @media (max-width:520px){.row2{grid-template-columns:1fr}form{padding:24px}.final h2{font-size:36px;line-height:40px}}
 
+  .cta-card{position:relative;z-index:1;display:grid;gap:16px;align-content:start;padding:32px;border-radius:24px;background:var(--s1);border:1px solid var(--line-2)}
+  .cta-badge{justify-self:start;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(215,243,107,.12);color:var(--lime);font-size:12px;line-height:16px;font-weight:600}
+  .cta-card h3{font-size:30px;line-height:36px;letter-spacing:-.03em}
+  .cta-card > p{color:var(--muted)}
+  .cta-card ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .cta-card li{display:flex;align-items:center;gap:12px;color:var(--text-2)}
+  .cta-card li i{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--s3);color:var(--coral);font-size:16px;flex-shrink:0}
+  .cta-card .btn{justify-content:center;margin-top:8px}
+  @media (max-width:520px){.cta-card{padding:24px}.cta-card h3{font-size:24px;line-height:32px}}
   /* Footer */
   footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:96px}
   .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px}
@@ -1066,7 +1075,7 @@
     <div class="hero-foot">
       <p class="tok-late rv">STAT6 engineers secure custom AI software for Fortune 500 companies and global MNCs. With our design partner Design Template Hub, we also deliver award winning brands, websites and AI engine optimisation, and help founders launch.</p>
       <div class="hero-cta rv d1">
-        <a href="#contact" class="btn btn-primary btn-lg">Book a strategy call <span class="arrow"><i class="ph ph-arrow-right"></i></span></a>
+        <a href="/enquiry" class="btn btn-primary btn-lg">Book a strategy call <span class="arrow"><i class="ph ph-arrow-right"></i></span></a>
         <div class="hero-proof">
           <div class="avatars" aria-hidden="true">
             <span style="background:#FF5EC4">MO</span><span style="background:#D7F36B">RK</span><span style="background:#BBD7FF">AS</span><span style="background:#C9B8FF">LT</span>
@@ -1123,7 +1132,7 @@
         <div><small>Crew</small><b>AI · Brand · Web</b></div>
       </div>
     </div>
-    <div class="f-board rv"><a href="#contact" class="btn btn-primary btn-lg">Board the flight: book a strategy call <span class="arrow"><i class="ph ph-arrow-right"></i></span></a></div>
+    <div class="f-board rv"><a href="/enquiry" class="btn btn-primary btn-lg">Board the flight: book a strategy call <span class="arrow"><i class="ph ph-arrow-right"></i></span></a></div>
   </div>
 </section>
 
@@ -1333,7 +1342,7 @@
             <div class="ic"><i class="ph ph-rocket-launch"></i></div>
             <h3>Launch support, from company name to first customer</h3>
             <p>Positioning, pitch decks, go to market pages, analytics and the launch campaign itself. We stay on after go live to keep growth compounding.</p>
-            <a href="#contact" class="btn btn-ghost" style="margin-top:24px">Plan my launch <i class="ph ph-arrow-up-right"></i></a>
+            <a href="/enquiry?service=Business+launch" class="btn btn-ghost" style="margin-top:24px">Plan my launch <i class="ph ph-arrow-up-right"></i></a>
           </div>
           <div class="viz lt" id="launchViz" aria-hidden="true">
             <div class="rail"><i id="railFill"></i></div>
@@ -1400,7 +1409,7 @@
         <span class="eyebrow rv"><span class="dot"></span>Selected work</span>
         <h2 class="h2 rv d1">Work that judges remember <em>and</em> customers act on.</h2>
       </div>
-      <a href="#contact" class="btn btn-ghost rv d2">Request the full portfolio <i class="ph ph-arrow-up-right"></i></a>
+      <a href="/enquiry" class="btn btn-ghost rv d2">Request the full portfolio <i class="ph ph-arrow-up-right"></i></a>
     </div>
     <div class="work">
       <!-- A. BRAND -->
@@ -1425,7 +1434,7 @@
           <span class="hint" style="left:176px;bottom:20px;color:inherit;opacity:.8">&#8592; try a colourway</span>
           <svg class="seal2" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="seal2" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"/></defs><text><textPath href="#seal2">BRAND SYSTEM · 2026 · HALVORSEN ·</textPath></text></svg>
         </div>
-        <div class="meta"><div><h3 id="c1">Halvorsen Maritime</h3><div class="tags">Rebrand · Website · Fleet AI dashboard</div><a href="#contact">Request this case <i class="ph ph-arrow-up-right"></i></a></div><div class="res"><b>+184%</b><span>qualified leads</span></div></div>
+        <div class="meta"><div><h3 id="c1">Halvorsen Maritime</h3><div class="tags">Rebrand · Website · Fleet AI dashboard</div><a href="/enquiry">Request this case <i class="ph ph-arrow-up-right"></i></a></div><div class="res"><b>+184%</b><span>qualified leads</span></div></div>
       </article>
 
       <!-- B. DESIGN -->
@@ -1450,7 +1459,7 @@
           <div class="ph2" aria-hidden="true"><div class="in2"><div class="top"></div><div class="rows"><i></i><i></i><i></i><i></i></div></div></div>
           <span class="hint" style="right:152px;top:20px;color:#1A0909">tap the tabs &#8600;</span>
         </div>
-        <div class="meta"><div><h3 id="c2">Kestrel Health</h3><div class="tags">Brand · Web platform · AEO</div><a href="#contact">Request this case <i class="ph ph-arrow-up-right"></i></a></div><div class="res"><b>3.7×</b><span>AI assistant citations</span></div></div>
+        <div class="meta"><div><h3 id="c2">Kestrel Health</h3><div class="tags">Brand · Web platform · AEO</div><a href="/enquiry">Request this case <i class="ph ph-arrow-up-right"></i></a></div><div class="res"><b>3.7×</b><span>AI assistant citations</span></div></div>
       </article>
 
       <!-- C. SECURE -->
@@ -1472,7 +1481,7 @@
           </div>
           <div class="log" aria-hidden="true"><div>09:14 read  pf/4471 ok<br>09:14 mask  name, iban<br>09:15 model private-01<br>09:15 audit signed<br>09:16 read  pf/2210 ok<br>09:16 mask  name, ssn<br>09:14 read  pf/4471 ok<br>09:14 mask  name, iban<br>09:15 model private-01<br>09:15 audit signed<br>09:16 read  pf/2210 ok<br>09:16 mask  name, ssn</div></div>
         </div>
-        <div class="meta"><div><h3 id="c3">Oruma Private Bank</h3><div class="tags">Design system · Secure advisor copilot</div><a href="#contact">Request this case <i class="ph ph-arrow-up-right"></i></a></div><div class="res"><b>11 min</b><span>from 4 hour reviews</span></div></div>
+        <div class="meta"><div><h3 id="c3">Oruma Private Bank</h3><div class="tags">Design system · Secure advisor copilot</div><a href="/enquiry">Request this case <i class="ph ph-arrow-up-right"></i></a></div><div class="res"><b>11 min</b><span>from 4 hour reviews</span></div></div>
       </article>
 
       <!-- D. BUILD -->
@@ -1495,7 +1504,7 @@
           </div>
           <div class="count"><b id="docCount">4,812</b>documents today</div>
         </div>
-        <div class="meta"><div><h3 id="c4">Vantline Logistics</h3><div class="tags">Document intelligence · Ops automation</div><a href="#contact">Request this case <i class="ph ph-arrow-up-right"></i></a></div><div class="res"><b>$2.4M</b><span>saved in year one</span></div></div>
+        <div class="meta"><div><h3 id="c4">Vantline Logistics</h3><div class="tags">Document intelligence · Ops automation</div><a href="/enquiry">Request this case <i class="ph ph-arrow-up-right"></i></a></div><div class="res"><b>$2.4M</b><span>saved in year one</span></div></div>
       </article>
 
       <!-- E. SUPPORT -->
@@ -1551,7 +1560,7 @@
       <span class="eyebrow rv"><span class="dot"></span>Enterprise grade security</span>
       <h2 class="h2 rv d1">Built to pass your security review <em>the first time.</em></h2>
       <p class="lead rv d2">Our software runs inside Fortune 500 environments where a failed audit is not an option. Every build ships with the documentation your CISO will ask for.</p>
-      <div class="rv d3" style="margin-top:40px"><a href="#contact" class="btn btn-ghost">Request our security pack <i class="ph ph-file-lock"></i></a></div>
+      <div class="rv d3" style="margin-top:40px"><a href="/enquiry" class="btn btn-ghost">Request our security pack <i class="ph ph-file-lock"></i></a></div>
     </div>
     <div class="sec-list">
       <div class="sec-item rv"><i class="ph ph-cloud-check"></i><h4>Your cloud, your keys</h4><p>Deployed in your AWS, Azure or GCP tenant, or fully on premises.</p></div>
@@ -1595,7 +1604,7 @@
 
       <div class="vref rv">
         <p><b>Want to hear it from them directly?</b> Every client above has agreed to a 20 minute reference call. Ask on your strategy call and we will introduce you.</p>
-        <a href="#contact" class="btn btn-primary">Request a reference call <span class="arrow"><i class="ph ph-arrow-right"></i></span></a>
+        <a href="/enquiry" class="btn btn-primary">Request a reference call <span class="arrow"><i class="ph ph-arrow-right"></i></span></a>
       </div>
     </div>
   </div>
@@ -1637,41 +1646,18 @@
           <div><i class="ph ph-check-circle"></i>Discovery phase money back guarantee</div>
         </div>
       </div>
-      <form id="lead" novalidate aria-label="Book a strategy call">
-        <div class="form-inner">
-          <div class="row2">
-            <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" placeholder="Ananya Iyer" required><span class="msg">Please enter your name.</span></div>
-            <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="ananya@company.com" required><span class="msg">Please enter a valid email address.</span></div>
-          </div>
-          <div class="row2">
-            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98450 21734" required><span class="msg">Please enter a valid phone number.</span></div>
-            <div class="field"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization" placeholder="Company name"></div>
-          </div>
-          <fieldset class="field" style="border:0;padding:0;margin:0">
-            <legend style="font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px">What do you need?</legend>
-            <div class="pills">
-              <label><input type="checkbox" name="need" value="Brand identity"><span>Brand identity</span></label>
-              <label><input type="checkbox" name="need" value="Website"><span>Website</span></label>
-              <label><input type="checkbox" name="need" value="AI engine optimisation"><span>AI engine optimisation</span></label>
-              <label><input type="checkbox" name="need" value="Custom AI software"><span>Custom AI software</span></label>
-              <label><input type="checkbox" name="need" value="Business launch"><span>Business launch</span></label>
-            </div>
-          </fieldset>
-          <div class="field"><label for="f-budget">Budget range</label>
-            <select id="f-budget" name="budget" required>
-              <option value="">Select a range</option>
-              <option>$15k to $40k</option><option>$40k to $120k</option><option>$120k to $400k</option><option>$400k and above</option>
-            </select><span class="msg">Please choose a budget range.</span></div>
-          <div class="field"><label for="f-msg">Project details</label><textarea id="f-msg" name="message" placeholder="Tell us what you are launching and when"></textarea></div>
-          <button type="submit" class="btn btn-primary btn-lg" id="submit">Book my strategy call <span class="arrow"><i class="ph ph-arrow-right"></i></span></button>
-          <p class="fine">By submitting you agree to our <a href="#privacy" style="text-decoration:underline">privacy policy</a>. Want to share more? <a href="/enquiry" style="text-decoration:underline">Use the full enquiry form</a>.</p>
-        </div>
-        <div class="success" role="status">
-          <i class="ph-fill ph-check-circle"></i>
-          <h3>Request received.</h3>
-          <p>A STAT6 lead will email you within one business day with three time slots for your strategy call.</p>
-        </div>
-      </form>
+      <div class="cta-card">
+        <span class="cta-badge"><i class="ph-fill ph-lightning"></i>Takes about 2 minutes</span>
+        <h3>Tell us about your project</h3>
+        <p>Share what you are building, the services you need, your budget and timeline. It goes straight to a STAT6 lead.</p>
+        <ul>
+          <li><i class="ph ph-user"></i>Your details and phone number</li>
+          <li><i class="ph ph-squares-four"></i>Services, budget and launch timeline</li>
+          <li><i class="ph ph-note-pencil"></i>A few lines about the project</li>
+        </ul>
+        <a href="/enquiry" class="btn btn-primary btn-lg">Start your enquiry <span class="arrow"><i class="ph ph-arrow-right"></i></span></a>
+        <p class="fine">Prefer email? Write to <a href="mailto:hello@stat6.ai" style="text-decoration:underline">hello@stat6.ai</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -1708,7 +1694,6 @@
   <div class="row"><button class="btn btn-ghost btn-sm" data-c="essential">Essential only</button><button class="btn btn-primary btn-sm" data-c="all">Accept all</button></div>
 </div>
 
-<script src="assets/google-form.js"></script>
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2269,34 +2254,6 @@
   $$('.faq-list details').forEach(d => d.addEventListener('toggle', () => {
     if (d.open) $$('.faq-list details').forEach(o => { if (o !== d) o.open = false; });
   }));
-
-  /* Form validation */
-  const form = $('#lead'), btn = $('#submit');
-  const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
-  const check = f => {
-    const input = f.querySelector('[required]');
-    const v = input.value.trim();
-    const ok = input.type === 'email' ? emailOk(v) : input.type === 'tel' ? /^[+()\d\s.-]{7,20}$/.test(v) && (v.match(/\d/g) || []).length >= 7 : v !== '';
-    f.classList.toggle('err', !ok); input.setAttribute('aria-invalid', !ok); return ok;
-  };
-  const required = $$('.field', form).filter(f => f.querySelector('[required]'));
-  required.forEach(f => f.querySelector('[required]').addEventListener('blur', () => check(f)));
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const results = required.map(check);
-    if (results.includes(false)) { required[results.indexOf(false)].querySelector('[required]').focus(); return; }
-    const label = btn.innerHTML;
-    btn.disabled = true;
-    btn.innerHTML = '<span style="width:160px"><span class="sk"></span></span>';
-    const res = await window.submitToGoogleForm({
-      name: $('#f-name').value.trim(), email: $('#f-email').value.trim(), phone: $('#f-phone').value.trim(), company: $('#f-co').value.trim(),
-      services: $$('input[name=need]:checked', form).map(c => c.value),
-      budget: $('#f-budget').value, message: $('#f-msg').value.trim(), page: 'Home page contact form',
-    });
-    btn.disabled = false; btn.innerHTML = label;
-    if (!res.ok) { $('.fine', form).textContent = 'We could not send your request. Please try again or email hello@stat6.ai.'; return; }
-    form.classList.add('done');
-  });
 
   /* Cookie consent */
   const cookie = $('#cookie');
