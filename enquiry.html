@@ -207,17 +207,10 @@
           </div>
           <span class="msg">Please choose at least one service.</span>
         </div>
-        <div class="choice" id="budgetBox">
-          <span class="lbl">Budget range</span>
-          <div class="chips">
-            <label><input type="radio" name="budget" value="Under $15k"><span>Under $15k</span></label>
-            <label><input type="radio" name="budget" value="$15k to $40k"><span>$15k to $40k</span></label>
-            <label><input type="radio" name="budget" value="$40k to $120k"><span>$40k to $120k</span></label>
-            <label><input type="radio" name="budget" value="$120k to $400k"><span>$120k to $400k</span></label>
-            <label><input type="radio" name="budget" value="$400k and above"><span>$400k and above</span></label>
-            <label><input type="radio" name="budget" value="Not sure yet"><span>Not sure yet</span></label>
-          </div>
-          <span class="msg">Please choose a budget range.</span>
+        <div class="field" style="margin:20px 0 20px">
+          <label class="lbl" for="budget">Budget</label>
+          <input type="text" id="budget" name="budget" maxlength="120" placeholder="For example ₹8 lakh, $25k, or open to suggestions" required>
+          <span class="msg">Please share a budget, or write "not sure yet".</span>
         </div>
         <div class="choice" id="timelineBox">
           <span class="lbl">When do you want to launch?</span>
@@ -287,6 +280,7 @@
     company: el => el.value.trim().length > 0,
     website: el => urlOk(el.value.trim()),
     message: el => el.value.trim().length >= 20,
+    budget: el => el.value.trim().length > 0,
   };
   const checkField = id => {
     const el = $('#' + id), ok = rules[id](el), f = el.closest('.field');
@@ -301,7 +295,7 @@
   // Live progress across the required answers
   const progress = () => {
     const done = [rules.name($('#name')), rules.email($('#email')), rules.phone($('#phone')), rules.company($('#company')),
-      $$('input[name=services]:checked').length > 0, $$('input[name=budget]:checked').length > 0,
+      $$('input[name=services]:checked').length > 0, rules.budget($('#budget')),
       rules.message($('#message')), $('#consent').checked].filter(Boolean).length;
     const pct = Math.round(done / 8 * 100);
     $('#progBar').style.width = pct + '%'; $('#progTxt').textContent = pct + '%';
@@ -314,9 +308,8 @@
     alertBox.classList.remove('show');
     const okFields = Object.keys(rules).map(checkField);
     const okServices = checkGroup('#servicesBox', 'services');
-    const okBudget = checkGroup('#budgetBox', 'budget');
     const okConsent = $('#consent').checked; $('#consentBox').classList.toggle('err', !okConsent);
-    if (okFields.includes(false) || !okServices || !okBudget || !okConsent) {
+    if (okFields.includes(false) || !okServices || !okConsent) {
       const first = form.querySelector('.field.err input, .field.err textarea, .choice.err input, #consentBox.err input');
       if (first) { first.focus({ preventScroll: true }); first.closest('.field, .choice, .consent').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
       return;
@@ -327,7 +320,7 @@
       name: $('#name').value.trim(), email: $('#email').value.trim(), phone: $('#phone').value.trim(),
       company: $('#company').value.trim(), website: $('#website').value.trim(),
       services: $$('input[name=services]:checked').map(c => c.value),
-      budget: ($('input[name=budget]:checked') || {}).value || '',
+      budget: $('#budget').value.trim(),
       timeline: ($('input[name=timeline]:checked') || {}).value || '',
       message: $('#message').value.trim(), source: $('#source').value, page: 'Enquiry page',
     };
